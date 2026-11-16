@@ -1,173 +1,360 @@
 <!doctype html>
-<html lang="en" data-type="personal">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Siddharth Pandey | Digital Business &amp; Marketing Portfolio</title>
-  <meta name="description" content="Siddharth Pandey, BBA student at IIM Bangalore (Digital Business &amp; Entrepreneurship). Digital marketing, websites, brand and music.">
-  <meta name="theme-color" content="#0b0b0c">
+  <title>siddharth pandey — marketing strategist &amp; designer</title>
+  <meta name="description" content="Siddharth Pandey, marketing strategist and designer at Sanriya Finvest, Pune. BBA-DBE at IIM Bangalore, 2026–2029.">
+  <meta name="theme-color" content="#121212">
+  <meta property="og:title" content="siddharth pandey — marketing strategist &amp; designer">
+  <meta property="og:description" content="Marketing strategist and designer · Pune.">
+  <meta property="og:image" content="assets/illustrations/01-hero.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/illustrations/01-hero.webp">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="is-locked">
-  <a class="skip" href="#work">Skip to projects</a>
+<body>
 
-  <!-- SPLASH: terminal gate (idea from a terminal-style entry screen) -->
-  <section class="splash" id="splash" aria-label="Intro">
-    <div class="splash__term">
-      <p class="mono dim">siddharth.pandey &mdash; query</p>
-      <p class="splash__line mono" id="typed" aria-live="polite"></p>
-      <button class="splash__enter mono" id="enter" type="button">_ enter my desk &rarr;</button>
+<!-- THE GATE SWITCH: a hidden checkbox. Ticking it (the "enter portfolio" label) opens the page. No JS. -->
+<input class="gate-switch" type="checkbox" id="enter" role="button" aria-pressed="false" aria-label="enter portfolio" autocomplete="off">
+
+<!-- ICONS: one sprite, reused with <use> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57l-.02-2.04c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"/></symbol>
+  <symbol id="i-cv" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zM14 3v5h5M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 20V12M10 20V6M15 20v-9M20 20V4"/></g></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></g></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c.6 4.9 2.6 7.4 8 8.6v.8c-5.4 1.2-7.4 3.7-8 8.6h-.8c-.6-4.9-2.6-7.4-8-8.6v-.8c5.4-1.2 7.4-3.7 8-8.6z"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></g></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 8 5-3 5 3-1.5-8"/></g></symbol>
+  <symbol id="i-burst" viewBox="0 0 24 24"><polygon fill="currentColor" points="12,1.5 14.53,5.9 19.42,4.58 18.1,9.47 22.5,12 18.1,14.53 19.42,19.42 14.53,18.1 12,22.5 9.47,18.1 4.58,19.42 5.9,14.53 1.5,12 5.9,9.47 4.58,4.58 9.47,5.9"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="2.5"/><path d="m15.5 10.5 6-3.5v10l-6-3.5z"/></g></symbol>
+  <symbol id="i-cam-off" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M10 6h3a2.5 2.5 0 0 1 2.5 2.5v1l6-2.5v10M15.5 15.5A2.5 2.5 0 0 1 13 18H5a2.5 2.5 0 0 1-2.5-2.5v-7A2.5 2.5 0 0 1 5 6"/><path d="M2 2l20 20"/></g></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="2.5" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3.5"/></g></symbol>
+  <symbol id="i-mic-off" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 9.5V5.5a3 3 0 0 0-5.8-1M9 9v2.5a3 3 0 0 0 5 2.2M5 11a7 7 0 0 0 11.3 5.5M19 11a7 7 0 0 1-.6 2.8M12 18v3.5M2 2l20 20"/></g></symbol>
+  <symbol id="i-smile" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M8 14.5s1.5 2 4 2 4-2 4-2"/><path d="M9 9.5h.01M15 9.5h.01" stroke-width="3"/></g></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 11.5V6a1.75 1.75 0 0 0-3.5 0v5M14.5 10.5V4a1.75 1.75 0 0 0-3.5 0v6.5M11 10.5V5.5a1.75 1.75 0 0 0-3.5 0v8.5M18 9.5a1.75 1.75 0 0 1 3.5 0V14a8 8 0 0 1-8 8h-1a8 8 0 0 1-6-2.7l-3-3.4a1.8 1.8 0 0 1 2.6-2.4L7.5 15"/></symbol>
+  <symbol id="i-end" viewBox="0 0 24 24"><path fill="currentColor" d="M12 8.5c-3.7 0-7.1 1.2-9.5 3.3-.6.5-.7 1.4-.2 2.1l1.5 2c.4.5 1.1.7 1.7.5l3-1.1c.6-.2 1-.8 1-1.4v-1.9a14 14 0 0 1 5 0v1.9c0 .6.4 1.2 1 1.4l3 1.1c.6.2 1.3 0 1.7-.5l1.5-2c.5-.7.4-1.6-.2-2.1-2.4-2.1-5.8-3.3-9.5-3.3z"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6.5A2.5 2.5 0 0 1 5.5 4h4l2 2.2h7A2.5 2.5 0 0 1 21 8.7v8.8a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.5 16a5 5 0 0 1 7 0"/><path d="M12 19.5h.01" stroke-width="3"/></g></symbol>
+</svg>
+
+<!-- 0 · GATE: a mac desktop. Terminal types with CSS keyframes, then waits for the visitor -->
+<div class="gate">
+  <div class="gate__stage">
+    <div class="mac-term mac-term--gate" aria-hidden="true">
+      <div class="mac-term__bar"><span class="lights"><i></i><i></i><i></i></span><span class="mac-term__title"><svg><use href="#i-folder"/></svg>siddharth — -zsh — 80×24</span></div>
+      <div class="mac-term__body">
+        <p class="t0">Last login: Mon Nov 16 09:41:02 on ttys001</p>
+        <p class="t1"><span class="ps">siddharth@MacBook-Pro ~ %</span> <span class="type" style="--n:6">whoami</span></p>
+        <p class="t2">siddharth pandey, marketing strategist &amp; designer, pune</p>
+        <p class="t3"><span class="ps">siddharth@MacBook-Pro ~ %</span> <span class="type" style="--n:14">open portfolio</span></p>
+      </div>
     </div>
-    <p class="splash__foot mono dim">&#9632; SIDDHARTH.PANDEY &#9632; v1.0</p>
-  </section>
+    <label class="btn btn--light gate__btn" for="enter" aria-hidden="true"><span class="roll"><span data-t="enter portfolio ↵">enter portfolio ↵</span></span></label>
+  </div>
+</div>
 
-  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
+<a class="skip" href="#main">skip to content</a>
 
-  <header class="nav" id="nav">
-    <a class="nav__brand" href="#top" aria-label="Siddharth Pandey, home">SP<sup>&reg;</sup></a>
-    <nav aria-label="Primary">
-      <ul class="nav__links mono">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#path">Path</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <span class="nav__time mono" id="clock" aria-label="Local time"></span>
-  </header>
+<main id="main">
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero" id="hero">
-      <canvas id="gl" aria-hidden="true"></canvas>
-      <div class="hero__inner">
-        <p class="eyebrow mono">( Digital business &middot; Marketing &middot; Web )</p>
-        <h1 class="hero__title" aria-label="Siddharth Pandey">
-          <span class="line"><span class="word">SIDDHARTH</span></span>
-          <span class="line"><span class="word"><em>Pandey</em></span></span>
-        </h1>
-        <p class="hero__lede">BBA student at IIM Bangalore. I grow brands online, build their websites, and make things people remember.</p>
-        <div class="hero__cta">
-          <a class="btn btn--solid magnetic" href="#work">See my work</a>
-          <a class="btn btn--ghost magnetic" href="#contact">Say hello</a>
+  <!-- 1 · HERO: the portrait leads, the name sits beside it -->
+  <section class="hero" id="top">
+    <header class="nav">
+      <p class="nav__side">portfolio · 2026</p>
+      <nav class="nav__group" aria-label="Profiles and contact">
+        <div class="pill">
+          <a class="pill__mark" href="#top" aria-label="Siddharth Pandey, top of page">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="pill__name">siddharth</span>
+          </a>
+          <a class="pill__link" href="https://www.linkedin.com/in/siddharth-pandey-a5373a1b5/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+          <a class="pill__link" href="https://github.com/siddhrttth-beep" target="_blank" rel="noopener" aria-label="GitHub"><svg aria-hidden="true"><use href="#i-github"/></svg></a>
+          <a class="pill__link" href="assets/Siddharth_Pandey_CV.pdf" target="_blank" rel="noopener" aria-label="CV, PDF"><svg aria-hidden="true"><use href="#i-cv"/></svg></a>
+        </div>
+        <a class="btn btn--nav" href="#contact"><span class="roll"><span data-t="let's talk">let's talk</span></span></a>
+      </nav>
+      <p class="nav__side nav__side--r">pune, india <span aria-hidden="true">✳</span></p>
+    </header>
+
+    <div class="hero__copy">
+      <h1 class="hero__name">
+        <img class="jelly" src="assets/lettering/siddharth.svg" alt="Siddharth" width="581" height="100">
+        <img class="jelly" src="assets/lettering/pandey.svg" alt="Pandey" width="395" height="100">
+      </h1>
+      <p class="hero__lede">marketing strategist &amp; designer at <a class="link link--inline" href="https://sanriya.in" target="_blank" rel="noopener">sanriya finvest</a>, pune. i work out what a brand should say, then design the things that say it.</p>
+      <div class="hero__cta">
+        <a class="btn btn--light" href="#my-work"><span class="roll"><span data-t="see my work ↓">see my work ↓</span></span></a>
+        <a class="btn" href="#contact"><span class="roll"><span data-t="say hello →">say hello →</span></span></a>
+      </div>
+    </div>
+
+    <figure class="hero__art">
+      <span class="blob blob--a" aria-hidden="true"></span>
+      <svg class="blob blob--b" aria-hidden="true"><use href="#i-burst"/></svg>
+      <div class="tilt">
+        <!-- nine invisible zones: hovering one tilts the window towards the cursor (3D, CSS only) -->
+        <i class="tilt__z"></i><i class="tilt__z"></i><i class="tilt__z"></i>
+        <i class="tilt__z"></i><i class="tilt__z"></i><i class="tilt__z"></i>
+        <i class="tilt__z"></i><i class="tilt__z"></i><i class="tilt__z"></i>
+        <div class="win win--hero">
+          <div class="win__bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="win__title">siddharth.png</span></div>
+          <img src="assets/illustrations/01-hero.webp" alt="Illustration of Siddharth at his desk, eyes closed, arms crossed, sketches and sticky notes pinned on the wall behind him" width="896" height="1200" fetchpriority="high">
+          <span class="win__shine" aria-hidden="true"></span>
         </div>
       </div>
-      <p class="hero__hint mono" aria-hidden="true">move your mouse &middot; scroll &darr;</p>
-    </section>
+      <span class="sticker sticker--a">✳ open to work</span>
+      <span class="sticker sticker--b">IIM Bangalore · '29</span>
+      <span class="sticker sticker--c">✦ marketer</span>
+    </figure>
+  </section>
 
-    <!-- MARQUEE -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>Digital marketing</span><span>Social media</span><span>SEO</span><span>WordPress</span><span>Email campaigns</span><span>HTML &amp; CSS</span><span>Music production</span>
-        <span>Digital marketing</span><span>Social media</span><span>SEO</span><span>WordPress</span><span>Email campaigns</span><span>HTML &amp; CSS</span><span>Music production</span>
-      </div>
+  <!-- 2 · MY WORK — a video call with four things built at work. Tiles flip to the real screen and link out. -->
+  <section class="call" id="my-work">
+    <h2 class="call__letter"><img class="jelly" src="assets/lettering/my-work.svg" alt="my work" width="484" height="100" loading="lazy"></h2>
+
+    <!-- call controls (just for fun): these switches restyle the call below -->
+    <input class="ctl__t" type="checkbox" id="c-cam" aria-label="camera off">
+    <input class="ctl__t" type="checkbox" id="c-mic" aria-label="mute">
+    <input class="ctl__t" type="checkbox" id="c-emo" aria-label="send a reaction">
+    <input class="ctl__t" type="checkbox" id="c-hand" aria-label="raise hand">
+
+    <div class="call__stage rise">
+      <ul class="tiles">
+        <li class="tile" style="--tile:#0380fe">
+          <input class="tile__flip" type="checkbox" id="tile-1" aria-label="flip: mutual fund ranking tool">
+          <label class="tile__card" for="tile-1">
+            <span class="tile__face"><img src="assets/illustrations/03-fund-ranking.webp" alt="" width="800" height="597" loading="lazy"><span class="tag"><svg class="tag__mic"><use href="#i-mic"/></svg><svg class="tag__off"><use href="#i-mic-off"/></svg>fund ranking tool</span></span>
+            <span class="tile__face tile__back"><span class="tile__url">sanriya · ranking desk</span><img src="assets/shots/fund-ranking.webp" alt="Screenshot: category rankings of 777 mutual fund schemes" width="1400" height="818" loading="lazy"><a class="tile__go" href="https://sanriya.in" target="_blank" rel="noopener">sanriya.in <svg aria-hidden="true"><use href="#i-out"/></svg></a></span>
+          </label>
+        </li>
+        <li class="tile" style="--tile:#edba3a">
+          <input class="tile__flip" type="checkbox" id="tile-2" aria-label="flip: company website">
+          <label class="tile__card" for="tile-2">
+            <span class="tile__face"><img src="assets/illustrations/04-website.webp" alt="" width="800" height="597" loading="lazy"><span class="tag"><svg class="tag__mic"><use href="#i-mic"/></svg><svg class="tag__off"><use href="#i-mic-off"/></svg>company website</span></span>
+            <span class="tile__face tile__back"><span class="tile__url">sanriya.in</span><img src="assets/shots/website.webp" alt="Screenshot: Sanriya website home page, achieve your financial goals here" width="1400" height="720" loading="lazy"><a class="tile__go" href="https://sanriya.in" target="_blank" rel="noopener">visit sanriya.in <svg aria-hidden="true"><use href="#i-out"/></svg></a></span>
+          </label>
+        </li>
+        <li class="tile" style="--tile:#fe5e68">
+          <input class="tile__flip" type="checkbox" id="tile-3" aria-label="flip: financial planning app">
+          <label class="tile__card" for="tile-3">
+            <span class="tile__face"><img src="assets/illustrations/05-planning-app.webp" alt="" width="800" height="597" loading="lazy"><span class="tag"><svg class="tag__mic"><use href="#i-mic"/></svg><svg class="tag__off"><use href="#i-mic-off"/></svg>planning app</span></span>
+            <span class="tile__face tile__back"><span class="tile__url">sanriya · financial plan</span><img src="assets/shots/planning-app.webp" alt="Screenshot: financial planning form, step one, about you" width="1400" height="816" loading="lazy"><a class="tile__go" href="https://sanriya.in" target="_blank" rel="noopener">sanriya.in <svg aria-hidden="true"><use href="#i-out"/></svg></a></span>
+          </label>
+        </li>
+        <li class="tile" style="--tile:#80c52f">
+          <input class="tile__flip" type="checkbox" id="tile-4" aria-label="flip: social media and brand">
+          <label class="tile__card" for="tile-4">
+            <span class="tile__face"><img src="assets/illustrations/06-social.webp" alt="" width="800" height="597" loading="lazy"><span class="tag"><svg class="tag__mic"><use href="#i-mic"/></svg><svg class="tag__off"><use href="#i-mic-off"/></svg>social &amp; brand</span></span>
+            <span class="tile__face tile__back"><span class="tile__url">instagram · @sanriyafinvest</span><img src="assets/shots/instagram.webp" alt="Screenshot: Sanriya Finvest Instagram profile" width="1400" height="857" loading="lazy"><a class="tile__go" href="https://www.instagram.com/sanriyafinvest/" target="_blank" rel="noopener">@sanriyafinvest <svg aria-hidden="true"><use href="#i-out"/></svg></a></span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="reactions" aria-hidden="true"><span>👏</span><span>🔥</span><span>💛</span><span>🚀</span><span>✨</span><span>👏</span></div>
+      <p class="toast">✋ hand raised. <a class="link link--inline" href="#contact">jump to say hello →</a></p>
     </div>
 
-    <!-- ABOUT -->
-    <section class="section about" id="about">
-      <p class="eyebrow mono">( About )</p>
-      <p class="statement" id="statement">
-        Good marketing is not louder, it is clearer. I like turning a plain idea into a campaign, a page or a sound that people actually remember, and then measuring whether it worked.
-      </p>
-      <div class="facts">
-        <div><span class="mono dim">Studying</span><p>BBA, Digital Business &amp; Entrepreneurship at IIM Bangalore (2026&ndash;2029)</p></div>
-        <div><span class="mono dim">Experience</span><p>Six months as Digital Marketing Intern at Sanriya Finvest, Pune</p></div>
-        <div><span class="mono dim">Based in</span><p>Pune, Maharashtra. Open to internships and collaborations.</p></div>
+    <div class="call__bar rise">
+      <div class="controls">
+        <label class="ctl" for="c-cam" title="camera"><svg class="ctl__on"><use href="#i-cam"/></svg><svg class="ctl__off"><use href="#i-cam-off"/></svg></label>
+        <label class="ctl" for="c-mic" title="microphone"><svg class="ctl__on"><use href="#i-mic"/></svg><svg class="ctl__off"><use href="#i-mic-off"/></svg></label>
+        <label class="ctl ctl--grey" for="c-emo" title="send a reaction"><svg><use href="#i-smile"/></svg></label>
+        <label class="ctl ctl--grey ctl--hand" for="c-hand" title="raise hand"><svg><use href="#i-hand"/></svg></label>
+        <a class="ctl ctl--end" href="#contact" title="leave call" aria-label="leave the call and go to contact"><svg aria-hidden="true"><use href="#i-end"/></svg></a>
       </div>
-    </section>
+      <p class="bubble call__bubble">i'm siddharth: a marketer who also designs. these four are live at sanriya. tap one to see it.</p>
+    </div>
+  </section>
 
-    <!-- SKILLS -->
-    <section class="section skills" id="skills">
-      <p class="eyebrow mono">( Toolbox )</p>
-      <h2 class="h2">What I do <em>well</em></h2>
-      <ul class="cards">
-        <li class="card tilt"><span class="card__n mono">01</span><h3>Digital marketing</h3><p>Campaign and creative strategy, investor webinars and events, market research.</p></li>
-        <li class="card tilt"><span class="card__n mono">02</span><h3>Social &amp; content</h3><p>Reel scripts, carousels and captions in English and Hinglish across Instagram, Facebook, LinkedIn and YouTube.</p></li>
-        <li class="card tilt"><span class="card__n mono">03</span><h3>Websites &amp; SEO</h3><p>WordPress and Elementor builds with on-page SEO, plus HTML and CSS by hand.</p></li>
-        <li class="card tilt"><span class="card__n mono">04</span><h3>Email marketing</h3><p>Planned and ran a campaign to about 700 existing and past clients.</p></li>
-        <li class="card tilt"><span class="card__n mono">05</span><h3>Design collateral</h3><p>Decks, brochures and branded PDFs, kept on-brand and compliant with AMFI and SEBI norms.</p></li>
-        <li class="card tilt"><span class="card__n mono">06</span><h3>Music &amp; performance</h3><p>Music production and vocal training, and a label deal as a producer.</p></li>
-      </ul>
-    </section>
+  <!-- 3–8 · six scenes. On large screens they pin and slide right-to-left, one after another,
+       driven by scroll (CSS scroll-driven animation). Everywhere else they simply stack. -->
+  <div class="hs" style="--n:6">
+  <div class="hs__snap" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="hs__pin">
+  <p class="hs__hint" aria-hidden="true">keep scrolling <span>→</span></p>
+  <div class="hs__progress" aria-hidden="true"><i></i></div>
+  <div class="hs__track">
 
-    <!-- WORK: stacked sticky cards -->
-    <section class="section work" id="work">
-      <p class="eyebrow mono">( Selected work )</p>
-      <h2 class="h2">Projects</h2>
-      <div class="stack">
-        <article class="proj" style="--i:0; --tone:#c6ff3d">
-          <div class="proj__meta mono"><span>01</span><span>Feb &ndash; Jul 2026</span></div>
-          <h3>Sanriya Finvest: digital presence</h3>
-          <p>Owned social media across four platforms, built and maintained the company website on WordPress and Elementor with on-page SEO, and kept every post compliant with AMFI and SEBI rules.</p>
-          <ul class="tags mono"><li>Social media</li><li>WordPress</li><li>SEO</li><li>Compliance</li></ul>
-        </article>
-        <article class="proj" style="--i:1; --tone:#ff7a45">
-          <div class="proj__meta mono"><span>02</span><span>Campaigns</span></div>
-          <h3>Email and investor events</h3>
-          <p>Planned an email campaign to about 700 clients across the product range, and led campaign strategy for investor webinars, including AIF and PMS sessions, with decks and brochures to match.</p>
-          <ul class="tags mono"><li>Email</li><li>Webinars</li><li>Decks &amp; brochures</li></ul>
-        </article>
-        <article class="proj" style="--i:2; --tone:#7ad7ff">
-          <div class="proj__meta mono"><span>03</span><span>Music &amp; events</span></div>
-          <h3>Live music, London and Bharuch</h3>
-          <p>Marketed a techno event in London and drove ticket sales. At school, earned the highest revenue at the entrepreneurship fair by selling live music requests.</p>
-          <ul class="tags mono"><li>Events</li><li>Sales</li><li>Production</li></ul>
-        </article>
-        <article class="proj" style="--i:3; --tone:#d6a8ff">
-          <div class="proj__meta mono"><span>04</span><span>2026</span></div>
-          <h3>This portfolio</h3>
-          <p>Hand-built with HTML, CSS and JavaScript: a terminal-style entry, a live 3D hero, scroll-driven type and stacked cards.</p>
-          <ul class="tags mono"><li>HTML</li><li>CSS</li><li>Three.js</li><li>GSAP</li></ul>
-        </article>
+  <!-- 3 · STRATEGIST -->
+  <section class="scene" id="work" data-n="01" style="--bg:#0499fd; --i:0">
+    <figure class="scene__art rise"><span class="sticker sticker--scene" style="--rot:-6deg">✳ full-time at sanriya</span><img decoding="async" src="assets/illustrations/02-work.webp" alt="Illustration: a young man on a laptop with phones and a paper plane floating around him" width="1000" height="1000"></figure>
+    <article class="app rise">
+      <header class="app__bar">
+        <p class="app__time">01<span>work</span></p>
+        <span class="app__ic" aria-hidden="true"><svg><use href="#i-chart"/></svg></span>
+      </header>
+      <div class="app__body">
+        <h2 class="letter" style="--r:6.04"><img class="jelly" src="assets/lettering/strategist.svg" alt="strategist" width="604" height="100"></h2>
+        <p>marketing strategist at <a class="link link--inline" href="https://sanriya.in" target="_blank" rel="noopener">sanriya finvest</a>, a mutual fund distributor in pune. research and strategy first, then the channels that carry it.</p>
+        <ul class="rows rows--tap">
+          <li class="row" tabindex="0"><span class="row__ic" aria-hidden="true"><svg><use href="#i-burst"/></svg></span><p><b>research</b><span>market and competitor research: who our investors are, what others say, where we stand apart.</span></p></li>
+          <li class="row" tabindex="0"><span class="row__ic" aria-hidden="true"><svg><use href="#i-burst"/></svg></span><p><b>social</b><span>instagram, facebook, linkedin and youtube. reels and carousels.</span></p></li>
+          <li class="row" tabindex="0"><span class="row__ic" aria-hidden="true"><svg><use href="#i-burst"/></svg></span><p><b>website</b><span>created the company site, vibe-coded and hosted on cloudflare, along with SEO and AEO for lead generation.</span></p></li>
+          <li class="row" tabindex="0"><span class="row__ic" aria-hidden="true"><svg><use href="#i-burst"/></svg></span><p><b>performance marketing ads</b><span>lead-generation campaigns that bring in new investors.</span></p></li>
+        </ul>
       </div>
-    </section>
+    </article>
+  </section>
 
-    <!-- PATH -->
-    <section class="section path" id="path">
-      <p class="eyebrow mono">( Path )</p>
-      <h2 class="h2">How I got <em>here</em></h2>
-      <ol class="timeline">
-        <li><span class="mono">2026 &ndash; 2029</span><h3>IIM Bangalore</h3><p>BBA in Digital Business &amp; Entrepreneurship.</p></li>
-        <li><span class="mono">Feb &ndash; Jul 2026</span><h3>Digital Marketing Intern, Sanriya Finvest</h3><p>Social, web, SEO, email and investor events for an AMFI-registered mutual fund distributor in Pune.</p></li>
-        <li><span class="mono">Certified</span><h3>Learning on paper too</h3><p>NISM Series V-A (Mutual Fund Distributors), Google Fundamentals of Digital Marketing, HubSpot Digital Marketing and Inbound Marketing, Point Blank Music School (London), IELTS.</p></li>
-        <li><span class="mono">2022 &amp; 2024</span><h3>School</h3><p>Class 10 at DPS Bharuch, Class 12 at Amicus International School, Bharuch.</p></li>
-      </ol>
-    </section>
+  <!-- 4 · DESIGNER -->
+  <section class="scene scene--flip" id="brand" data-n="02" style="--bg:#f8c035; --i:1">
+    <figure class="scene__art rise"><span class="sticker sticker--scene" style="--rot:5deg">✦ one story, every channel</span><img decoding="async" src="assets/illustrations/07-brand-design.webp" alt="Illustration: a man in a spotlight carrying glass panels with a bar chart" width="1000" height="1000"></figure>
+    <article class="app rise">
+      <header class="app__bar">
+        <p class="app__time">02<span>brand</span></p>
+        <span class="app__ic" aria-hidden="true"><svg><use href="#i-pen"/></svg></span>
+      </header>
+      <div class="app__body">
+        <h2 class="letter" style="--r:5.00"><img class="jelly" src="assets/lettering/designer.svg" alt="designer" width="500" height="100"></h2>
+        <p>the other half of the job: a clear brand story, and screens that are easy to use.</p>
+        <ul class="rows rows--tap">
+          <li class="row" tabindex="0"><span class="row__ic" aria-hidden="true"><svg><use href="#i-burst"/></svg></span><p><b>brand</b><span>positioning, communication and narrative: one story, told the same way in every post, page and pitch.</span></p></li>
+          <li class="row" tabindex="0"><span class="row__ic" aria-hidden="true"><svg><use href="#i-burst"/></svg></span><p><b>ui/ux</b><span>the fund ranking tool, the planning app and the website, from first flow to finished screen.</span></p></li>
+          <li class="row" tabindex="0"><span class="row__ic" aria-hidden="true"><svg><use href="#i-burst"/></svg></span><p><b>events &amp; print</b><span>investor webinars, AIF and PMS sessions, decks and brochures. all within AMFI rules.</span></p></li>
+        </ul>
+      </div>
+    </article>
+  </section>
 
-    <!-- QUESTIONS -->
-    <section class="section faq" id="faq">
-      <p class="eyebrow mono">( Questions )</p>
-      <h2 class="h2">Asked <em>often</em></h2>
-      <details><summary>What can you help with?</summary><p>Social content, a website refresh with SEO, an email campaign, or an event push. I handle strategy and the actual making.</p></details>
-      <details><summary>Do you code?</summary><p>I build with WordPress and Elementor at work, and write HTML, CSS and JavaScript by hand. This site is hand-coded.</p></details>
-      <details><summary>Are you open to work?</summary><p>Yes, for internships and collaborations alongside my studies. Send me an email.</p></details>
-    </section>
+  <!-- 5 · GOOD AT -->
+  <section class="scene" id="skills" data-n="03" style="--bg:#7aca2d; --i:2">
+    <figure class="scene__art rise"><span class="sticker sticker--scene" style="--rot:-5deg">✳ AI first</span><img decoding="async" src="assets/illustrations/08-skills.webp" alt="Illustration: a man with glasses surrounded by a bar chart, a browser window, a magnet and a cursor" width="1000" height="1000"></figure>
+    <article class="app rise">
+      <header class="app__bar">
+        <p class="app__time">03<span>skills</span></p>
+        <span class="app__ic" aria-hidden="true"><svg><use href="#i-spark"/></svg></span>
+      </header>
+      <div class="app__body">
+        <h2 class="letter" style="--r:3.70"><img class="jelly" src="assets/lettering/good-at.svg" alt="good at" width="370" height="100"></h2>
+        <ul class="rows rows--tap">
+          <li class="row" tabindex="0"><span class="row__ic" aria-hidden="true"><svg><use href="#i-spark"/></svg></span><p><b>AI, first</b><span>research, writing, design and code with claude and other AI tools.</span></p></li>
+          <li class="row" tabindex="0"><span class="row__ic" aria-hidden="true"><svg><use href="#i-burst"/></svg></span><p><b>strategy &amp; research</b><span>markets, competitors, positioning, campaign plans.</span></p></li>
+          <li class="row" tabindex="0"><span class="row__ic" aria-hidden="true"><svg><use href="#i-burst"/></svg></span><p><b>ui/ux &amp; design</b><span>user flows, layouts and screens. decks, brochures, social creatives.</span></p></li>
+          <li class="row" tabindex="0"><span class="row__ic" aria-hidden="true"><svg><use href="#i-burst"/></svg></span><p><b>content, social &amp; ads</b><span>reels, carousels and performance marketing ads.</span></p></li>
+          <li class="row" tabindex="0"><span class="row__ic" aria-hidden="true"><svg><use href="#i-burst"/></svg></span><p><b>SEO, AEO &amp; web</b><span>on-page SEO, answer engine optimisation, sites shipped to cloudflare.</span></p></li>
+        </ul>
+      </div>
+    </article>
+  </section>
 
-    <!-- CONTACT -->
-    <section class="section contact" id="contact">
-      <p class="eyebrow mono">( Contact )</p>
-      <h2 class="contact__big">Let&rsquo;s make something <em>good.</em></h2>
-      <a class="contact__mail magnetic" href="mailto:spandey20106@gmail.com">spandey20106@gmail.com</a>
-      <ul class="contact__links mono">
-        <li><a href="https://www.linkedin.com/in/siddharth-pandey-a5373a1b5/" target="_blank" rel="noopener">LinkedIn &nearr;</a></li>
-        <li><a href="https://github.com/siddhrttth-beep" target="_blank" rel="noopener">GitHub &nearr;</a></li>
+  <!-- 6 · STUDIED -->
+  <section class="scene scene--flip" id="school" data-n="04" style="--bg:#ae6cff; --i:3">
+    <figure class="scene__art rise"><span class="sticker sticker--scene" style="--rot:6deg">🎓 class of 2029</span><img decoding="async" src="assets/illustrations/12-studied.webp" alt="Illustration: a graduate climbing a staircase of books towards an open door" width="1000" height="1000"></figure>
+    <article class="app rise">
+      <header class="app__bar">
+        <p class="app__time">04<span>school</span></p>
+        <span class="app__ic" aria-hidden="true"><svg><use href="#i-cap"/></svg></span>
+      </header>
+      <div class="app__body">
+        <h2 class="letter" style="--r:4.00"><img class="jelly" src="assets/lettering/studied.svg" alt="studied" width="400" height="100"></h2>
+        <ul class="rows">
+          <li class="row"><span class="logo logo--img" aria-hidden="true"><img src="https://upload.wikimedia.org/wikipedia/en/a/a2/IIM_Bangalore_Logo.svg" alt="" width="46" height="46" loading="lazy"></span><p><b>IIM Bangalore</b><span>BBA-DBE · <span class="nb">2026–2029</span></span></p></li>
+          <li class="row"><span class="logo logo--img logo--amicus" aria-hidden="true"><img src="https://www.aisbharuch.org/img/logo.jpg" alt="" width="750" height="188" loading="lazy"></span><p><b>amicus international school, bharuch</b><span>class 12 · 2024</span></p></li>
+          <li class="row"><span class="logo logo--img logo--dps" aria-hidden="true"><img src="https://resources.edunexttechnologies.com/web-data/dpsbharuch/img/header-logo-bhruch.png" alt="" width="333" height="64" loading="lazy"></span><p><b>delhi public school, bharuch</b><span>class 10 · 2022</span></p></li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- 7 · CERTIFIED -->
+  <section class="scene scene--certs" id="certs" data-n="05" style="--bg:#ff8433; --i:4">
+    <article class="app app--wide rise">
+      <header class="app__bar">
+        <p class="app__time">05<span>certs</span></p>
+        <span class="app__ic" aria-hidden="true"><svg><use href="#i-badge"/></svg></span>
+      </header>
+      <div class="app__body">
+        <h2 class="letter" style="--r:4.85"><img class="jelly" src="assets/lettering/certified.svg" alt="certified" width="485" height="100"></h2>
+        <ul class="rows rows--2">
+          <li class="row"><span class="logo logo--mono" aria-hidden="true">NISM</span><p><b>NISM series V-A</b><span>mutual fund distributors · NISM / SEBI</span></p></li>
+          <li class="row"><span class="logo logo--brand" style="--logo:url('https://cdn.jsdelivr.net/npm/simple-icons@13.0.0/icons/google.svg');--brand:#4285f4" aria-hidden="true"></span><p><b>fundamentals of digital marketing</b><span>google</span></p></li>
+          <li class="row"><span class="logo logo--brand" style="--logo:url('https://cdn.jsdelivr.net/npm/simple-icons@13.0.0/icons/hubspot.svg');--brand:#ff7a59" aria-hidden="true"></span><p><b>digital marketing</b><span>hubspot academy</span></p></li>
+          <li class="row"><span class="logo logo--brand" style="--logo:url('https://cdn.jsdelivr.net/npm/simple-icons@13.0.0/icons/hubspot.svg');--brand:#ff7a59" aria-hidden="true"></span><p><b>inbound marketing</b><span>hubspot academy</span></p></li>
+          <li class="row"><span class="logo logo--brand" style="--logo:url('https://cdn.jsdelivr.net/npm/simple-icons@13.0.0/icons/hubspot.svg');--brand:#ff7a59" aria-hidden="true"></span><p><b>answer engine optimisation</b><span>hubspot academy</span></p></li>
+          <li class="row"><span class="logo logo--mono" aria-hidden="true">PB</span><p><b>music production &amp; vocals</b><span>point blank music school, london</span></p></li>
+          <li class="row"><span class="logo logo--mono" aria-hidden="true">IELTS</span><p><b>english language</b><span>IELTS</span></p></li>
+          <li class="row"><span class="row__ic" aria-hidden="true"><svg><use href="#i-cv"/></svg></span><p><b>the full list</b><span><a class="link link--inline" href="assets/Siddharth_Pandey_CV.pdf" target="_blank" rel="noopener">in my cv</a></span></p></li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- 8 · SIDE QUESTS -->
+  <section class="desk" id="side-quests" data-n="06" style="--i:5">
+    <p class="mark">06</p>
+    <h2 class="desk__letter">
+      <picture>
+        <source media="(max-width: 699px)" srcset="assets/lettering/side.svg">
+        <img class="jelly" src="assets/lettering/side-quests.svg" alt="side quests" width="615" height="100">
+      </picture>
+      <img class="desk__l2" src="assets/lettering/quests.svg" alt="" width="377" height="100">
+    </h2>
+    <p class="desk__line">outside work. mostly music.</p>
+    <div class="window window--dark rise">
+      <div class="window__bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <ul class="quests">
+        <li>
+          <figure class="quest__art" style="--tile:#5bb73b"><img src="assets/illustrations/09-record-label.webp" alt="Illustration: a producer in headphones at a turntable, a fountain pen beside it" width="900" height="604"><span class="tag">guesstimate, london</span></figure>
+          <p><b>signed to a record label</b><span>as a music producer.</span></p>
+        </li>
+        <li>
+          <figure class="quest__art" style="--tile:#0497fe"><img src="assets/illustrations/10-techno-night.webp" alt="Illustration: a DJ at a deck under stage lights, with speakers and tickets" width="900" height="604"><span class="tag">midweek sessions, london</span></figure>
+          <p><b>marketed a techno event</b><span>handled its digital marketing and its sales.</span></p>
+        </li>
+        <li>
+          <figure class="quest__art" style="--tile:#f4bd3a"><img src="assets/illustrations/11-fair.webp" alt="Illustration: a boy playing a keyboard at a stall, music notes and coins floating up" width="900" height="604"><span class="tag">amicus entrepreneurship fair</span></figure>
+          <p><b>top revenue at the school fair</b><span>sold live music requests.</span></p>
+        </li>
       </ul>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="foot mono">
-    <span>&copy; 2026 Siddharth Pandey</span>
-    <span id="viewed">Viewed at --:--</span>
-  </footer>
+  </div>
+  </div>
+  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="script.js"></script>
+  <!-- ribbon before the ending -->
+  <div class="ribbon" aria-hidden="true">
+    <p class="ribbon__track"><span>open to strategy roles ✳ brand &amp; design projects ✳ a good brief ✳ a coffee chat ✳ </span><span>open to strategy roles ✳ brand &amp; design projects ✳ a good brief ✳ a coffee chat ✳ </span></p>
+  </div>
+
+  <!-- 9 · SAY HELLO -->
+  <section class="end" id="contact">
+    <h2 class="end__letter">
+      <img class="end__one jelly" src="assets/lettering/say-hello.svg" alt="say hello" width="513" height="100" loading="lazy">
+      <img class="end__two" src="assets/lettering/say.svg" alt="say" width="205" height="100" loading="lazy">
+      <img class="end__two" src="assets/lettering/hello-end.svg" alt="hello" width="284" height="100" loading="lazy">
+    </h2>
+    <div class="end__mid">
+      <div class="mac-term mac-term--end rise">
+        <div class="mac-term__bar"><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span><span class="mac-term__title"><svg aria-hidden="true"><use href="#i-folder"/></svg>siddharth — -zsh — 80×24</span></div>
+        <div class="mac-term__body">
+          <p class="l" style="--k:0">Last login: Mon Nov 16 09:41:02 on ttys002</p>
+          <p class="l" style="--k:1"><span class="ps">siddharth@MacBook-Pro ~ %</span> cat contact.txt</p>
+          <p class="l" style="--k:2"><span class="k">email    </span><a href="mailto:spandey20106@gmail.com">spandey20106@gmail.com</a></p>
+          <p class="l" style="--k:3"><span class="k">linkedin </span><a href="https://www.linkedin.com/in/siddharth-pandey-a5373a1b5/" target="_blank" rel="noopener">in/siddharth-pandey</a></p>
+          <p class="l" style="--k:4"><span class="k">github   </span><a href="https://github.com/siddhrttth-beep" target="_blank" rel="noopener">siddhrttth-beep</a></p>
+          <p class="l" style="--k:5"><span class="k">cv       </span><a href="assets/Siddharth_Pandey_CV.pdf" target="_blank" rel="noopener">Siddharth_Pandey_CV.pdf</a></p>
+          <p class="l" style="--k:6"><span class="ps">siddharth@MacBook-Pro ~ %</span> say "hello"<span class="cursor" aria-hidden="true"></span></p>
+        </div>
+      </div>
+      <div class="end__note rise">
+        <p class="bubble">so, shall we talk? if you need someone who can plan the strategy and design the thing too, write to me.</p>
+        <a class="btn" href="mailto:spandey20106@gmail.com"><span class="roll"><span data-t="write to me →">write to me →</span></span></a>
+      </div>
+    </div>
+    <footer class="end__foot">
+      <p class="end__legal">© 2026 siddharth pandey · pune, maharashtra</p>
+    </footer>
+  </section>
+
+</main>
+
 </body>
 </html>
