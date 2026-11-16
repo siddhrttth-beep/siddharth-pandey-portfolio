@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en" data-type="personal">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Siddharth Pandey | Digital Business &amp; Marketing Portfolio</title>
+  <meta name="description" content="Siddharth Pandey, BBA student at IIM Bangalore (Digital Business &amp; Entrepreneurship). Digital marketing, websites, brand and music.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-locked">
+  <a class="skip" href="#work">Skip to projects</a>
+
+  <!-- SPLASH: terminal gate (idea from a terminal-style entry screen) -->
+  <section class="splash" id="splash" aria-label="Intro">
+    <div class="splash__term">
+      <p class="mono dim">siddharth.pandey &mdash; query</p>
+      <p class="splash__line mono" id="typed" aria-live="polite"></p>
+      <button class="splash__enter mono" id="enter" type="button">_ enter my desk &rarr;</button>
+    </div>
+    <p class="splash__foot mono dim">&#9632; SIDDHARTH.PANDEY &#9632; v1.0</p>
+  </section>
+
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#top" aria-label="Siddharth Pandey, home">SP<sup>&reg;</sup></a>
+    <nav aria-label="Primary">
+      <ul class="nav__links mono">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#path">Path</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <span class="nav__time mono" id="clock" aria-label="Local time"></span>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <canvas id="gl" aria-hidden="true"></canvas>
+      <div class="hero__inner">
+        <p class="eyebrow mono">( Digital business &middot; Marketing &middot; Web )</p>
+        <h1 class="hero__title" aria-label="Siddharth Pandey">
+          <span class="line"><span class="word">SIDDHARTH</span></span>
+          <span class="line"><span class="word"><em>Pandey</em></span></span>
+        </h1>
+        <p class="hero__lede">BBA student at IIM Bangalore. I grow brands online, build their websites, and make things people remember.</p>
+        <div class="hero__cta">
+          <a class="btn btn--solid magnetic" href="#work">See my work</a>
+          <a class="btn btn--ghost magnetic" href="#contact">Say hello</a>
+        </div>
+      </div>
+      <p class="hero__hint mono" aria-hidden="true">move your mouse &middot; scroll &darr;</p>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Digital marketing</span><span>Social media</span><span>SEO</span><span>WordPress</span><span>Email campaigns</span><span>HTML &amp; CSS</span><span>Music production</span>
+        <span>Digital marketing</span><span>Social media</span><span>SEO</span><span>WordPress</span><span>Email campaigns</span><span>HTML &amp; CSS</span><span>Music production</span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <p class="eyebrow mono">( About )</p>
+      <p class="statement" id="statement">
+        Good marketing is not louder, it is clearer. I like turning a plain idea into a campaign, a page or a sound that people actually remember, and then measuring whether it worked.
+      </p>
+      <div class="facts">
+        <div><span class="mono dim">Studying</span><p>BBA, Digital Business &amp; Entrepreneurship at IIM Bangalore (2026&ndash;2029)</p></div>
+        <div><span class="mono dim">Experience</span><p>Six months as Digital Marketing Intern at Sanriya Finvest, Pune</p></div>
+        <div><span class="mono dim">Based in</span><p>Pune, Maharashtra. Open to internships and collaborations.</p></div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section skills" id="skills">
+      <p class="eyebrow mono">( Toolbox )</p>
+      <h2 class="h2">What I do <em>well</em></h2>
+      <ul class="cards">
+        <li class="card tilt"><span class="card__n mono">01</span><h3>Digital marketing</h3><p>Campaign and creative strategy, investor webinars and events, market research.</p></li>
+        <li class="card tilt"><span class="card__n mono">02</span><h3>Social &amp; content</h3><p>Reel scripts, carousels and captions in English and Hinglish across Instagram, Facebook, LinkedIn and YouTube.</p></li>
+        <li class="card tilt"><span class="card__n mono">03</span><h3>Websites &amp; SEO</h3><p>WordPress and Elementor builds with on-page SEO, plus HTML and CSS by hand.</p></li>
+        <li class="card tilt"><span class="card__n mono">04</span><h3>Email marketing</h3><p>Planned and ran a campaign to about 700 existing and past clients.</p></li>
+        <li class="card tilt"><span class="card__n mono">05</span><h3>Design collateral</h3><p>Decks, brochures and branded PDFs, kept on-brand and compliant with AMFI and SEBI norms.</p></li>
+        <li class="card tilt"><span class="card__n mono">06</span><h3>Music &amp; performance</h3><p>Music production and vocal training, and a label deal as a producer.</p></li>
+      </ul>
+    </section>
+
+    <!-- WORK: stacked sticky cards -->
+    <section class="section work" id="work">
+      <p class="eyebrow mono">( Selected work )</p>
+      <h2 class="h2">Projects</h2>
+      <div class="stack">
+        <article class="proj" style="--i:0; --tone:#c6ff3d">
+          <div class="proj__meta mono"><span>01</span><span>Feb &ndash; Jul 2026</span></div>
+          <h3>Sanriya Finvest: digital presence</h3>
+          <p>Owned social media across four platforms, built and maintained the company website on WordPress and Elementor with on-page SEO, and kept every post compliant with AMFI and SEBI rules.</p>
+          <ul class="tags mono"><li>Social media</li><li>WordPress</li><li>SEO</li><li>Compliance</li></ul>
+        </article>
+        <article class="proj" style="--i:1; --tone:#ff7a45">
+          <div class="proj__meta mono"><span>02</span><span>Campaigns</span></div>
+          <h3>Email and investor events</h3>
+          <p>Planned an email campaign to about 700 clients across the product range, and led campaign strategy for investor webinars, including AIF and PMS sessions, with decks and brochures to match.</p>
+          <ul class="tags mono"><li>Email</li><li>Webinars</li><li>Decks &amp; brochures</li></ul>
+        </article>
+        <article class="proj" style="--i:2; --tone:#7ad7ff">
+          <div class="proj__meta mono"><span>03</span><span>Music &amp; events</span></div>
+          <h3>Live music, London and Bharuch</h3>
+          <p>Marketed a techno event in London and drove ticket sales. At school, earned the highest revenue at the entrepreneurship fair by selling live music requests.</p>
+          <ul class="tags mono"><li>Events</li><li>Sales</li><li>Production</li></ul>
+        </article>
+        <article class="proj" style="--i:3; --tone:#d6a8ff">
+          <div class="proj__meta mono"><span>04</span><span>2026</span></div>
+          <h3>This portfolio</h3>
+          <p>Hand-built with HTML, CSS and JavaScript: a terminal-style entry, a live 3D hero, scroll-driven type and stacked cards.</p>
+          <ul class="tags mono"><li>HTML</li><li>CSS</li><li>Three.js</li><li>GSAP</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PATH -->
+    <section class="section path" id="path">
+      <p class="eyebrow mono">( Path )</p>
+      <h2 class="h2">How I got <em>here</em></h2>
+      <ol class="timeline">
+        <li><span class="mono">2026 &ndash; 2029</span><h3>IIM Bangalore</h3><p>BBA in Digital Business &amp; Entrepreneurship.</p></li>
+        <li><span class="mono">Feb &ndash; Jul 2026</span><h3>Digital Marketing Intern, Sanriya Finvest</h3><p>Social, web, SEO, email and investor events for an AMFI-registered mutual fund distributor in Pune.</p></li>
+        <li><span class="mono">Certified</span><h3>Learning on paper too</h3><p>NISM Series V-A (Mutual Fund Distributors), Google Fundamentals of Digital Marketing, HubSpot Digital Marketing and Inbound Marketing, Point Blank Music School (London), IELTS.</p></li>
+        <li><span class="mono">2022 &amp; 2024</span><h3>School</h3><p>Class 10 at DPS Bharuch, Class 12 at Amicus International School, Bharuch.</p></li>
+      </ol>
+    </section>
+
+    <!-- QUESTIONS -->
+    <section class="section faq" id="faq">
+      <p class="eyebrow mono">( Questions )</p>
+      <h2 class="h2">Asked <em>often</em></h2>
+      <details><summary>What can you help with?</summary><p>Social content, a website refresh with SEO, an email campaign, or an event push. I handle strategy and the actual making.</p></details>
+      <details><summary>Do you code?</summary><p>I build with WordPress and Elementor at work, and write HTML, CSS and JavaScript by hand. This site is hand-coded.</p></details>
+      <details><summary>Are you open to work?</summary><p>Yes, for internships and collaborations alongside my studies. Send me an email.</p></details>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <p class="eyebrow mono">( Contact )</p>
+      <h2 class="contact__big">Let&rsquo;s make something <em>good.</em></h2>
+      <a class="contact__mail magnetic" href="mailto:spandey20106@gmail.com">spandey20106@gmail.com</a>
+      <ul class="contact__links mono">
+        <li><a href="https://www.linkedin.com/in/siddharth-pandey-a5373a1b5/" target="_blank" rel="noopener">LinkedIn &nearr;</a></li>
+        <li><a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">GitHub &nearr;</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot mono">
+    <span>&copy; 2026 Siddharth Pandey</span>
+    <span id="viewed">Viewed at --:--</span>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
