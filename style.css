@@ -594,16 +594,10 @@ html:has(.gate-switch:not(:checked)) { overflow: hidden; }
 
 .logo--mono { font: 700 11.5px/1 var(--num); letter-spacing: -0.04em; }
 .logo--img { overflow: hidden; background: var(--white); box-shadow: inset 0 0 0 1px var(--line); }
-.logo { --s: 46; }
 .logo--img { position: relative; }
 .logo--img img { width: 100%; height: 100%; object-fit: contain; padding: 3px; }
-/* the Amicus and DPS files are wide banners: place their crests in the centre of the square */
 .logo--amicus { background: #1f4fa3; }
-.logo--amicus img { position: absolute; max-width: none; height: auto; padding: 0;
-  width: calc(var(--s) * 4.283px); left: calc(var(--s) * -.146px); top: calc(var(--s) * -.072px); }
-.logo--dps img { position: absolute; max-width: none; height: auto; padding: 0;
-  width: calc(var(--s) * 4.304px); left: calc(var(--s) * .177px); top: calc(var(--s) * .087px);
-  clip-path: inset(0 84.5% 0 0); }
+.logo--amicus img { padding: 0; object-fit: cover; }
 .logo--brand::before {
   content: ""; width: 24px; height: 24px; background: var(--brand);
   -webkit-mask: var(--logo) center / contain no-repeat;
@@ -879,7 +873,6 @@ html:has(.gate-switch:not(:checked)) { overflow: hidden; }
       .hs .app__body > p { display: none; }
       .hs .row { grid-template-columns: 38px minmax(0, 1fr); gap: 9px; padding: 5px 7px; }
       .hs :is(.row__ic, .logo) { width: 38px; height: 38px; font-size: 21px; }
-      .hs .logo { --s: 38; }
       .hs .logo--mono { font-size: 10px; }
       .hs .rows--tap .row { position: relative; padding-right: 30px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
       .hs .rows--tap .row::after {
